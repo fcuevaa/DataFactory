@@ -1,0 +1,9 @@
+{
+	"name": "facuevadatafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "767f155b-7e64-4e1f-978b-deffea85ae08",
+		"tenantId": "139a9f21-a954-41b2-9d7b-2d9727645f04"
+	}
+}

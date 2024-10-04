@@ -1,0 +1,28 @@
+{
+	"name": "ingesta_capa_plata_oro",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/facuevaastete@outlook.es/Ingesta_Capa_Plata_a_Oro"
+				},
+				"linkedServiceName": {
+					"referenceName": "Conectto_AzureDatabricks_DataFactory_Plata_Oro",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}

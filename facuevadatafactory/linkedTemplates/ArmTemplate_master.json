@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Nombre de instancia de Data Factory",
+			"defaultValue": "facuevadatafactory"
+		},
+		"Conector_ADLS_DataFactory_accountKey": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"accountKey\"de \"Conector_ADLS_DataFactory\""
+		},
+		"Conector_AzureDatabricks_DataFactory_accessToken": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"accessToken\"de \"Conector_AzureDatabricks_DataFactory\""
+		},
+		"Conectto_AzureDatabricks_DataFactory_Plata_Oro_accessToken": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"accessToken\"de \"Conectto_AzureDatabricks_DataFactory_Plata_Oro\""
+		},
+		"Conector_ADLS_DataFactory_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://facuevaa.dfs.core.windows.net/"
+		},
+		"Conector_AzureDatabricks_DataFactory_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1004-035638-tvg6yh98"
+		},
+		"Conectto_AzureDatabricks_DataFactory_Plata_Oro_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1004-035638-tvg6yh98"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Token de SAS para la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "facuevadatafactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Conector_ADLS_DataFactory_accountKey": {
+						"value": "[parameters('Conector_ADLS_DataFactory_accountKey')]"
+					},
+					"Conector_AzureDatabricks_DataFactory_accessToken": {
+						"value": "[parameters('Conector_AzureDatabricks_DataFactory_accessToken')]"
+					},
+					"Conectto_AzureDatabricks_DataFactory_Plata_Oro_accessToken": {
+						"value": "[parameters('Conectto_AzureDatabricks_DataFactory_Plata_Oro_accessToken')]"
+					},
+					"Conector_ADLS_DataFactory_properties_typeProperties_url": {
+						"value": "[parameters('Conector_ADLS_DataFactory_properties_typeProperties_url')]"
+					},
+					"Conector_AzureDatabricks_DataFactory_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('Conector_AzureDatabricks_DataFactory_properties_typeProperties_existingClusterId')]"
+					},
+					"Conectto_AzureDatabricks_DataFactory_Plata_Oro_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('Conectto_AzureDatabricks_DataFactory_Plata_Oro_properties_typeProperties_existingClusterId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

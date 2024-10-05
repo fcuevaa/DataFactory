@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "facuevadatafactory"
+		},
+		"Conector_ADLS_DataFactory_accountKey": {
+			"value": ""
+		},
+		"Conector_AzureDatabricks_DataFactory_accessToken": {
+			"value": ""
+		},
+		"Conectto_AzureDatabricks_DataFactory_Plata_Oro_accessToken": {
+			"value": ""
+		},
+		"Conector_ADLS_DataFactory_properties_typeProperties_url": {
+			"value": "https://facuevaa.dfs.core.windows.net/"
+		},
+		"Conector_AzureDatabricks_DataFactory_properties_typeProperties_existingClusterId": {
+			"value": "1004-035638-tvg6yh98"
+		},
+		"Conectto_AzureDatabricks_DataFactory_Plata_Oro_properties_typeProperties_existingClusterId": {
+			"value": "1004-035638-tvg6yh98"
+		}
+	}
+}

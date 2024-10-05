@@ -1,0 +1,25 @@
+{
+	"name": "execute_pipeline",
+	"properties": {
+		"description": "Desencadenador del pipeline ejecutar todo",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ejecutar_todo",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2024-10-04T21:45:00",
+				"timeZone": "SA Pacific Standard Time"
+			}
+		}
+	}
+}

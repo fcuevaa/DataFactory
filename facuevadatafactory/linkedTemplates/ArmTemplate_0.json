@@ -506,6 +506,37 @@
 				"[concat(variables('factoryId'), '/pipelines/ingesta_capa_bronce_plata')]",
 				"[concat(variables('factoryId'), '/pipelines/ingesta_capa_plata_oro')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/execute_pipeline')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Desencadenador del pipeline ejecutar todo",
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "ejecutar_todo",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2024-10-04T21:45:00",
+						"timeZone": "SA Pacific Standard Time"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/ejecutar_todo')]"
+			]
 		}
 	]
 }
